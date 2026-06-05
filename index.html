@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tauseef Khan | Professional Portfolio</title>
+
+    <!-- Open Graph / WhatsApp Preview Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tauseef Khan | Professional Portfolio" />
+    <meta property="og:description" content="Multi-Disciplinary Artist, Audio Producer & Digital Marketing Specialist. Explore my music, experience, and creative work." />
+    <meta property="og:image" content="Tauseef image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tauseef Khan | Professional Portfolio" />
+    <meta name="twitter:description" content="Multi-Disciplinary Artist, Audio Producer & Digital Marketing Specialist." />
+    <meta name="twitter:image" content="Tauseef image.jpg" />
+
+    <style>
+        :root {
+            --bg-main: #000000;
+            --bg-surface: #0a0a0a;
+            --bg-card: #121212;
+            --accent-red: #e60000;
+            --accent-crimson: #ff1a1a;
+            --red-glow: rgba(230, 0, 0, 0.25);
+            --red-glow-intense: rgba(255, 26, 26, 0.5);
+            --text-main: #ffffff;
+            --text-muted: #f5f5f7;
+            --text-body: #a0a0a5;
+            --border-color: #222222;
+            --border-prominent: #e60000;
+            --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+            --transition-premium: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-primary);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        /* =====================================================================
+           HEADER — single red border, no double line anywhere
+           ===================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #000000 !important;
+            border-bottom: 2px solid var(--accent-red) !important;
+            border-top: none !important;
+            border-left: none !important;
+            border-right: none !important;
+            box-shadow: 0 4px 25px rgba(230, 0, 0, 0.3);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+        }
+
+        header::after, header::before {
+            display: none !important;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            display: inline-block;
+            line-height: 1;
+            z-index: 1001;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-red);
+            text-shadow: 0 0 10px var(--red-glow);
+            transition: var(--transition-premium);
+            cursor: pointer;
+            padding: 5px 0;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        .logo:hover {
+            color: #ffffff;
+            text-shadow: 0 0 20px var(--red-glow-intense);
+        }
+
+        .logo:hover span {
+            color: var(--accent-red);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: var(--transition-premium);
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: block;
+            border: none !important;
+        }
+
+        nav ul li a:hover {
+            color: var(--text-main);
+            background-color: var(--accent-red);
+            box-shadow: 0 0 25px var(--red-glow-intense);
+            transform: translateY(-2px);
+        }
+
+        /* Hamburger */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle .bar {
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-main);
+            border-radius: 2px;
+            transition: var(--transition-premium);
+        }
+
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+            background-color: var(--accent-red);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+            background-color: var(--accent-red);
+        }
+
+        /* Sections */
+        section {
+            position: relative;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            padding: 80px 2rem;
+            border-bottom: 2px solid var(--border-color);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-content {
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        #home     { background: radial-gradient(circle at 80% 20%, rgba(230, 0, 0, 0.15) 0%, transparent 60%), var(--bg-main); }
+        #experience { background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-surface) 100%); }
+        #education { background: radial-gradient(circle at 70% 30%, rgba(230, 0, 0, 0.1) 0%, transparent 55%), var(--bg-main); }
+        #skills   { background: radial-gradient(circle at 15% 75%, rgba(230, 0, 0, 0.12) 0%, transparent 50%), var(--bg-main); }
+        #clients  { background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-main) 100%); }
+        #channels { background: radial-gradient(circle at 50% 50%, rgba(230, 0, 0, 0.1) 0%, transparent 70%), var(--bg-main); }
+        #contact  { background: radial-gradient(circle at 50% 50%, rgba(230, 0, 0, 0.18) 0%, transparent 70%), var(--bg-main); }
+
+        /* Hero */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .hero-tag {
+            color: var(--accent-red);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+            border-left: 3px solid var(--accent-red);
+            padding-left: 10px;
+            text-shadow: 0 0 10px var(--red-glow);
+        }
+
+        .hero-left h1 {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-left p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-body);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-subtitles {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .subtitle-pill {
+            background: var(--bg-surface);
+            border: 2px solid var(--border-color);
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: var(--transition-premium);
+        }
+
+        .subtitle-pill:hover {
+            border-color: var(--accent-red);
+            color: var(--accent-red);
+            box-shadow: 0 0 20px var(--red-glow);
+            transform: scale(1.05);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-red);
+            color: var(--text-main) !important;
+            text-decoration: none !important;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 1.1rem 2.4rem;
+            border-radius: 6px;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 15px var(--red-glow);
+            transition: var(--transition-premium);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--accent-red) !important;
+            border-color: var(--accent-red);
+            box-shadow: 0 0 30px var(--red-glow-intense);
+            transform: translateY(-3px);
+        }
+
+        .hero-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portrait-frame {
+            width: 100%;
+            max-width: 360px;
+            aspect-ratio: 0.85;
+            background-color: var(--bg-surface);
+            border: 3px solid var(--accent-red);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px var(--red-glow);
+            transition: var(--transition-premium);
+            position: relative;
+            z-index: 10;
+            isolation: isolate;
+        }
+
+        .portrait-frame:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 45px var(--red-glow-intense);
+        }
+
+        .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.75rem;
+            color: var(--accent-red);
+            text-shadow: 0 0 15px var(--red-glow);
+        }
+
+        .section-desc {
+            color: var(--text-body);
+            font-size: 1rem;
+            margin-bottom: 3.5rem;
+            max-width: 750px;
+            line-height: 1.6;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .portfolio-card {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: var(--transition-premium);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-red);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7), 0 0 30px var(--red-glow-intense);
+        }
+
+        .card-meta-date {
+            font-size: 0.8rem;
+            color: var(--accent-red);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .portfolio-card h4 {
+            font-size: 1rem;
+            color: var(--accent-red);
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+        }
+
+        .portfolio-card p {
+            color: var(--text-body);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .responsibilities-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .responsibilities-list li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .responsibilities-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-red);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .skill-badge {
+            background: rgba(230, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            transition: var(--transition-premium);
+        }
+
+        .portfolio-card:hover .skill-badge {
+            border-color: rgba(230, 0, 0, 0.3);
+            color: #ffffff;
+        }
+
+        /* =====================================================================
+           EDUCATION SECTION
+           ===================================================================== */
+        #education {
+            min-height: auto;
+            padding: 80px 2rem;
+        }
+
+        .education-card {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: var(--transition-premium);
+            max-width: 900px;
+        }
+
+        .education-card:hover {
+            border-color: var(--accent-red);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7), 0 0 30px var(--red-glow-intense);
+            transform: translateY(-6px);
+        }
+
+        .edu-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .edu-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(230, 0, 0, 0.08);
+            border: 2px solid var(--accent-red);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--accent-red);
+            box-shadow: 0 0 15px var(--red-glow);
+        }
+
+        .edu-title-block h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.35rem;
+        }
+
+        .edu-title-block h4 {
+            font-size: 1rem;
+            color: var(--accent-red);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-title-block .edu-meta {
+            font-size: 0.8rem;
+            color: var(--text-body);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .edu-divider {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 0 0 1.75rem 0;
+        }
+
+        .edu-modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .edu-module-item {
+            background: rgba(230, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition-premium);
+        }
+
+        .edu-module-item:hover {
+            border-color: rgba(230, 0, 0, 0.35);
+            background: rgba(230, 0, 0, 0.06);
+        }
+
+        .edu-module-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 0 6px var(--red-glow);
+        }
+
+        .edu-module-item span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Link Lists (Channels section) */
+        .link-list {
+            list-style: none;
+        }
+
+        .link-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .link-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            background: rgba(230, 0, 0, 0.02);
+            border: 1px solid transparent;
+            transition: var(--transition-premium);
+        }
+
+        .link-list a:hover {
+            color: var(--text-main);
+            background: var(--accent-red);
+            border-color: var(--accent-crimson);
+            padding-left: 1.25rem;
+            box-shadow: 0 0 20px var(--red-glow);
+        }
+
+        /* =====================================================================
+           FIX: Cards in channels section — align content to TOP
+           ===================================================================== */
+        #channels .portfolio-card {
+            justify-content: flex-start;
+        }
+
+        #channels .portfolio-card h3 {
+            margin-bottom: 1.25rem;
+        }
+
+        /* Track Bar */
+        .track-bar {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: var(--transition-premium);
+            margin-top: 2rem;
+        }
+
+        .track-bar:hover {
+            border-color: var(--accent-red);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7), 0 0 35px var(--red-glow-intense);
+        }
+
+        .track-info h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .track-info p {
+            font-size: 0.9rem;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-top: 0.4rem;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-box {
+            background: var(--bg-card);
+            border: 3px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+            transition: var(--transition-premium);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-box:hover {
+            border-color: var(--accent-red);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 35px var(--red-glow-intense);
+        }
+
+        .contact-box-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            background: rgba(230, 0, 0, 0.01);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-premium);
+        }
+
+        .contact-icon {
+            width: 46px;
+            height: 46px;
+            background: var(--bg-surface);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-red);
+            transition: var(--transition-premium);
+            flex-shrink: 0;
+        }
+
+        .contact-details label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-red);
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .contact-details .value {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 700;
+            transition: var(--transition-premium);
+            word-break: break-all;
+        }
+
+        .contact-item:hover {
+            background: rgba(230, 0, 0, 0.05);
+            padding-left: 1.5rem;
+            border-color: rgba(230, 0, 0, 0.3);
+        }
+
+        .contact-item:hover .contact-icon {
+            background: var(--accent-red);
+            color: var(--text-main);
+            border-color: var(--accent-crimson);
+            box-shadow: 0 0 20px var(--red-glow-intense);
+        }
+
+        .contact-item:hover .value {
+            color: var(--accent-red);
+        }
+
+        footer {
+            background: #050505;
+            padding: 3rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid var(--border-prominent);
+            box-shadow: 0 -4px 20px var(--red-glow);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* =====================================================================
+           RESPONSIVE
+           ===================================================================== */
+        @media (max-width: 1024px) {
+            section { padding: 60px 2rem; }
+            .hero-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+            .hero-left { align-items: center; }
+            .hero-subtitles { justify-content: center; }
+            .portrait-frame { max-width: 320px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            footer { flex-direction: column; gap: 1.25rem; text-align: center; }
+        }
+
+        @media (max-width: 868px) {
+            body { padding-top: 75px !important; }
+
+            header {
+                height: 75px !important;
+                /* ONE clean red border-bottom — nothing else */
+                border-bottom: 2px solid var(--accent-red) !important;
+                box-shadow: 0 2px 15px rgba(230, 0, 0, 0.35) !important;
+            }
+
+            /* Kill pseudo-elements completely on mobile */
+            header::before,
+            header::after {
+                display: none !important;
+                content: none !important;
+            }
+
+            .menu-toggle { display: flex; }
+
+            nav {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #050505 !important;
+                /* NO border-top — header already has the red line */
+                border: none !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                z-index: 99995;
+            }
+
+            nav.active {
+                max-height: 420px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+            }
+
+            nav ul li { width: 100%; text-align: center; }
+
+            nav ul li a {
+                padding: 1.1rem;
+                font-size: 0.95rem;
+                border-radius: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+            }
+
+            nav ul li a:hover {
+                transform: none;
+                box-shadow: none;
+            }
+
+            #home {
+                padding-top: 130px !important;
+                padding-bottom: 60px;
+            }
+
+            .hero-grid {
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 2.5rem;
+            }
+
+            .portrait-frame { max-width: 270px; margin: 0 auto; }
+
+            .cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+            .hero-left h1, .section-title { font-size: 1.8rem; }
+
+            .section-desc { margin-bottom: 2.5rem; }
+
+            .portfolio-card { padding: 1.8rem; }
+
+            .track-bar {
+                text-align: center;
+                justify-content: center;
+                padding: 1.8rem;
+            }
+
+            .track-bar .btn { width: 100%; }
+
+            .edu-header { gap: 1.25rem; }
+            .edu-modules { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding-top: 70px !important; }
+            header { height: 70px !important; }
+            nav { top: 70px; }
+
+            #home { padding-top: 110px !important; }
+
+            .nav-container { padding: 0 1.25rem; }
+            .logo { font-size: 1.3rem; }
+            section { padding: 50px 1.25rem; }
+            .hero-left h1 { font-size: 1.5rem; }
+            .subtitle-pill { padding: 0.5rem 1rem; font-size: 0.75rem; }
+            .btn { width: 100%; padding: 1rem 1.5rem; font-size: 0.85rem; }
+            .contact-box { padding: 1.5rem; }
+            .contact-item { padding: 0.8rem; gap: 0.75rem; }
+            .contact-details .value { font-size: 0.95rem; }
+            .portrait-frame { max-width: 230px; }
+            .education-card { padding: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <div class="logo">Tauseef Khan<span>.</span></div>
+            </a>
+
+            <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#channels">Channels</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ======== HOME ======== -->
+    <section id="home">
+        <div class="section-content hero-grid">
+            <div class="hero-left">
+                <div class="hero-tag">Welcome to my Portfolio</div>
+                <h1>Hi, I'm Tauseef. I operate at the intersection of logical infrastructure and raw creative expression.</h1>
+                <p>From designing automated YouTube and AI workflows that scale commercial reach, to composing, mixing, and mastering industry-grade audio pipelines—I build the structures that allow creative content to convert, perform, and resonate.</p>
+                <div class="hero-subtitles">
+                    <span class="subtitle-pill">Multi-Disciplinary Artist</span>
+                    <span class="subtitle-pill">Audio Producer</span>
+                    <span class="subtitle-pill">Digital Marketing Specialist</span>
+                </div>
+                <a href="#contact" class="btn">Get In Touch</a>
+            </div>
+            <div class="hero-right">
+                <div class="portrait-frame">
+                    <img src="Tauseef image.jpg" alt="Tauseef Khan">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== EXPERIENCE ======== -->
+    <section id="experience">
+        <div class="section-content">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-desc">A professional breakdown of my long-term career roles, tech stack execution, and media production timelines.</p>
+
+            <div class="cards-grid">
+                <div class="portfolio-card">
+                    <div>
+                        <div class="card-meta-date">July 2024 - Present</div>
+                        <h3>Social Media Manager & Video Editor</h3>
+                        <h4>Al-Najaat Association (Social Care Foundation)</h4>
+                        <p>Managing the comprehensive online presence and digital outreach layout for a structured social organization.</p>
+                        <ul class="responsibilities-list">
+                            <li>Overseeing content performance metrics and executing digital monetization structures.</li>
+                            <li>Creating high-engagement short-form media including custom Reels and Shorts.</li>
+                            <li>Writing performance scripts and editing professional multi-platform distribution videos.</li>
+                            <li>Managing primary engagement layouts on TikTok, Instagram, and Facebook systems.</li>
+                        </ul>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Content Creation</span>
+                        <span class="skill-badge">Monetization</span>
+                        <span class="skill-badge">Insights Analysis</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div>
+                        <div class="card-meta-date">2022 - 2024</div>
+                        <h3>Information Technology Specialist</h3>
+                        <h4>DHA Design Office - ESA Consultants</h4>
+                        <p>Provided core structural database support, systems optimization, and professional data control within an architecture environment.</p>
+                        <ul class="responsibilities-list">
+                            <li>Handled server architectures, structural database designs, and IP network tracking layouts.</li>
+                            <li>Configured network environments and managed active system hardware troubleshooting.</li>
+                            <li>Organized complex data control systems, securely backing up Scrutiny and Administration archives to local servers.</li>
+                            <li>Analyzed architectural tracking data and facilitated technical client relations and support pipelines.</li>
+                        </ul>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Database Design</span>
+                        <span class="skill-badge">Server Config</span>
+                        <span class="skill-badge">Network Admin</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div>
+                        <div class="card-meta-date">2021 - 2022</div>
+                        <h3>Digital Marketing & Web Designer</h3>
+                        <h4>Bhutta Real Estate</h4>
+                        <p>Engineered web design architectures and high-ROI digital lead distribution networks for property sales frameworks.</p>
+                        <ul class="responsibilities-list">
+                            <li>Designed and structured responsive web layout platforms using WordPress frameworks.</li>
+                            <li>Built and launched target audience paid conversion models on Facebook Ads and Google Ads.</li>
+                            <li>Created high-conversion marketing graphics, custom print material, and dynamic poster designs.</li>
+                            <li>Designed modern corporate social media grids tailored for Instagram viral reach metrics.</li>
+                        </ul>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">WordPress</span>
+                        <span class="skill-badge">Paid Ads</span>
+                        <span class="skill-badge">Graphic Design</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div>
+                        <div class="card-meta-date">2020 - 2021</div>
+                        <h3>Customer Service & Audit Specialist</h3>
+                        <h4>Roomy Hotels Islamabad</h4>
+                        <p>Managed back-end operational evaluation systems alongside front-end public relations pipelines.</p>
+                        <ul class="responsibilities-list">
+                            <li>Conducted rigorous internal balance tracking and detailed corporate data audits.</li>
+                            <li>Managed professional customer support arrays, processing reservations, and booking systems.</li>
+                            <li>Presented structural company briefs to corporate business networks and visiting delegates.</li>
+                        </ul>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Systems Auditing</span>
+                        <span class="skill-badge">Public Relations</span>
+                        <span class="skill-badge">Operations Admin</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div>
+                        <div class="card-meta-date">2017 - 2023</div>
+                        <h3>Senior Music Producer & Composer</h3>
+                        <h4>Independent Freelance Studio</h4>
+                        <p>Operated a comprehensive commercial media studio delivering elite sound design and music videos globally.</p>
+                        <ul class="responsibilities-list">
+                            <li>Produced original studio arrangements, creative songwriting, and custom professional compositions.</li>
+                            <li>Managed total music video production frameworks from storyboard layouts to final color editing.</li>
+                            <li>Conducted direct client negotiations, international contract planning, and service distribution.</li>
+                        </ul>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">FL Studio Suite</span>
+                        <span class="skill-badge">Video Production</span>
+                        <span class="skill-badge">Client Relations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== EDUCATION (NEW DEDICATED SECTION) ======== -->
+    <section id="education">
+        <div class="section-content">
+            <h2 class="section-title">Academic Foundation</h2>
+            <p class="section-desc">The technical credentials that power my workflow automations, networking capabilities, and data management systems.</p>
+
+            <div class="education-card">
+                <div class="edu-header">
+                    <div class="edu-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </div>
+                    <div class="edu-title-block">
+                        <h3>Bachelor of Science — Information Technology</h3>
+                        <h4>BS-IT Degree</h4>
+                        <div class="edu-meta">Academic Foundation</div>
+                    </div>
+                </div>
+
+                <hr class="edu-divider">
+
+                <div class="edu-modules">
+                    <div class="edu-module-item">
+                        <div class="edu-module-dot"></div>
+                        <span>Systems Network Operations & Frameworks</span>
+                    </div>
+                    <div class="edu-module-item">
+                        <div class="edu-module-dot"></div>
+                        <span>Database Architecture Foundations</span>
+                    </div>
+                    <div class="edu-module-item">
+                        <div class="edu-module-dot"></div>
+                        <span>Structural Computing & Analytical Sorting</span>
+                    </div>
+                    <div class="edu-module-item">
+                        <div class="edu-module-dot"></div>
+                        <span>Server & IP Configuration Systems</span>
+                    </div>
+                    <div class="edu-module-item">
+                        <div class="edu-module-dot"></div>
+                        <span>Data Infrastructure Management</span>
+                    </div>
+                    <div class="edu-module-item">
+                        <div class="edu-module-dot"></div>
+                        <span>System Analysis & Troubleshooting</span>
+                    </div>
+                </div>
+
+                <div class="skill-tags">
+                    <span class="skill-badge">BS-IT</span>
+                    <span class="skill-badge">System Analysis</span>
+                    <span class="skill-badge">Data Infrastructure</span>
+                    <span class="skill-badge">Network Operations</span>
+                    <span class="skill-badge">Database Architecture</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SKILLS ======== -->
+    <section id="skills">
+        <div class="section-content">
+            <h2 class="section-title">Skills & Specialized Toolkits</h2>
+            <p class="section-desc">A structured index of my technical software proficiencies, production interfaces, and administrative execution systems.</p>
+
+            <div class="cards-grid">
+                <div class="portfolio-card">
+                    <h3>Creative Audio & Video Suites</h3>
+                    <p>Professional multi-track sequencing, voiceover tracking, audio mastering pipelines, and video post-production editing.</p>
+                    <div class="skill-tags">
+                        <span class="skill-badge">FL Studio Suite</span>
+                        <span class="skill-badge">iZotope Ozone</span>
+                        <span class="skill-badge">CapCut Pro</span>
+                        <span class="skill-badge">Adobe Premiere Pro</span>
+                        <span class="skill-badge">Canva Pro</span>
+                        <span class="skill-badge">Poster Designing</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <h3>AI Systems & Automation Layouts</h3>
+                    <p>Building automated YouTube loops, script generation using prompt sets, and automated code-based animation rendering.</p>
+                    <div class="skill-tags">
+                        <span class="skill-badge">AI Advanced Prompting</span>
+                        <span class="skill-badge">Claude Code + Remotion</span>
+                        <span class="skill-badge">Google Flow AI</span>
+                        <span class="skill-badge">ChatGPT / Meta AI</span>
+                        <span class="skill-badge">DeepSeek / Perplexity</span>
+                        <span class="skill-badge">Script Writing Layouts</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <h3>IT Operations & Data Management</h3>
+                    <p>Managing network directories, configuring server systems, database control, and administrative office tooling suites.</p>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Database Management</span>
+                        <span class="skill-badge">Server & IP Config</span>
+                        <span class="skill-badge">System Troubleshooting</span>
+                        <span class="skill-badge">Document Control</span>
+                        <span class="skill-badge">Microsoft Office Suite</span>
+                        <span class="skill-badge">Platform Analytics</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <h3>Corporate Administration & PR</h3>
+                    <p>Managing executive client networks, arranging board meetings, and administering highly confidential travel and corporate calendars.</p>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Public Relations</span>
+                        <span class="skill-badge">Customer Relations</span>
+                        <span class="skill-badge">Meeting Management</span>
+                        <span class="skill-badge">Data Confidentiality</span>
+                        <span class="skill-badge">Strategic Communication</span>
+                        <span class="skill-badge">Organizational Skills</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== CLIENTS ======== -->
+    <section id="clients">
+        <div class="section-content">
+            <h2 class="section-title">Client Portfolios & Collaborations</h2>
+            <p class="section-desc">A detailed look into commercial contracts, businesses, and organizations where I managed creative and media strategies.</p>
+
+            <div class="cards-grid">
+                <div class="portfolio-card">
+                    <div>
+                        <div class="card-meta-date">Cafe & Restaurant</div>
+                        <h3>Chai Mosiqi</h3>
+                        <h4>Social Media Manager & Graphic Designer</h4>
+                        <p>Created visually engaging promotional posters and managed day-to-day social media operations, ensuring consistent brand communication, audience engagement, and a strong digital presence across multiple platforms.</p>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Brand Communication</span>
+                        <span class="skill-badge">Asset Curation</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div>
+                        <div class="card-meta-date">Medical & Healthcare</div>
+                        <h3>Smile Aesthetics</h3>
+                        <h4>Graphic Designer</h4>
+                        <p>Designed professional marketing and promotional materials for social media campaigns, helping strengthen brand identity, enhance online visibility, and support customer outreach efforts.</p>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Visual Aesthetics</span>
+                        <span class="skill-badge">Outreach Strategy</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div>
+                        <div class="card-meta-date">Real Estate & Development</div>
+                        <h3>Al Barvi Builders</h3>
+                        <h4>Digital Media Executive, Designer & Videographer</h4>
+                        <p>Managed social media platforms, designed marketing creatives, produced video content, and contributed to YouTube channel development. Supported brand growth through strategic visual communication, content creation, and digital marketing initiatives.</p>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Videography</span>
+                        <span class="skill-badge">YouTube Growth</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div>
+                        <div class="card-meta-date">Marketing Agency</div>
+                        <h3>Parwaaz Social Marketing</h3>
+                        <h4>Content Creator & Script Writer</h4>
+                        <p>Developed creative content strategies and wrote compelling scripts for promotional and awareness campaigns, ensuring clear messaging, audience engagement, and alignment with organizational objectives.</p>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Script Development</span>
+                        <span class="skill-badge">Creative Strategy</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div>
+                        <div class="card-meta-date">FMCG Corporate Group</div>
+                        <h3>Ghouia Ghee Private Limited</h3>
+                        <h4>Social Media Manager & Graphic Designer</h4>
+                        <p>Handled social media accounts and designed promotional graphics to maintain a consistent brand image, improve audience engagement, and support marketing campaigns across digital platforms.</p>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Corporate Grid Layout</span>
+                        <span class="skill-badge">Campaign Ads</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== CHANNELS ======== -->
+    <section id="channels">
+        <div class="section-content">
+            <h2 class="section-title">Verified Platforms & Profiles</h2>
+            <p class="section-desc">Direct access nodes to check my music releases, automated content networks, and verified business platforms.</p>
+
+            <div class="cards-grid">
+                <div class="portfolio-card">
+                    <h3>Music & Creative Portals</h3>
+                    <ul class="link-list">
+                        <li><a href="https://artists.spotify.com/c/artist/5IZ8XiGeEuDns2s6Q0NhyW/home" target="_blank">Spotify for Artists Dashboard</a></li>
+                        <li><a href="https://www.youtube.com/@tauseefkhan-w2z" target="_blank">YouTube Artist Music Channel</a></li>
+                        <li><a href="https://www.instagram.com/tauseefkhanmusic/" target="_blank">Instagram Professional Profile</a></li>
+                        <li><a href="https://www.facebook.com/mtauseefkhan0" target="_blank">Facebook Creator Hub</a></li>
+                        <li><a href="https://www.tiktok.com/@tauseefkhanm" target="_blank">TikTok Verified Content Feed</a></li>
+                    </ul>
+                </div>
+
+                <div class="portfolio-card">
+                    <h3>Automation & Business Portals</h3>
+                    <ul class="link-list">
+                        <li><a href="https://www.youtube.com/@HRBTK-f8q" target="_blank">YouTube AI Automation Showcase</a></li>
+                        <li><a href="https://www.fiverr.com/users/melodeez/seller_dashboard" target="_blank">Fiverr Active Seller Dashboard</a></li>
+                        <li><a href="https://www.linkedin.com/in/tauseef-khan-53a187292/" target="_blank">LinkedIn Professional Network</a></li>
+                    </ul>
+                </div>
+
+                <div class="portfolio-card">
+                    <h3>Managed Brand Portals</h3>
+                    <ul class="link-list">
+                        <li><a href="https://www.youtube.com/@MueedAskerMehdi" target="_blank">Mueed Asker Mehdi (YouTube)</a></li>
+                        <li><a href="https://www.instagram.com/alnajaatscf/" target="_blank">Al-Najaat SCF (Instagram)</a></li>
+                        <li><a href="https://www.facebook.com/AlNajaatSocialCareFoundation" target="_blank">Al-Najaat Foundation (Facebook)</a></li>
+                        <li><a href="https://www.facebook.com/mueed.asker.2025" target="_blank">Mueed Asker Profile (Facebook)</a></li>
+                        <li><a href="https://www.tiktok.com/@mueed.asker" target="_blank">Mueed Asker Hub (TikTok)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="track-bar">
+                <div class="track-info">
+                    <h3>Boondh Boondh</h3>
+                    <p>Independent Mastering Run • Live Streaming Node</p>
+                </div>
+                <a href="https://open.spotify.com/album/6lPIDPgU7Zgx6tMh69TbJ0" target="_blank" class="btn">Launch Spotify Track</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== CONTACT ======== -->
+    <section id="contact">
+        <div class="section-content">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 0.5rem;">Contact & Communication</h2>
+            <p class="section-desc" style="text-align: center; margin: 0 auto 3.5rem auto;">Reach out directly to arrange a client meeting, music production assignment, or freelance project inquiry.</p>
+
+            <div class="contact-grid">
+                <div class="contact-box">
+                    <div class="contact-box-title">Direct Inquiries</div>
+
+                    <a href="mailto:tauseefkhan505@gmail.com" class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="contact-details">
+                            <label>Email Address</label>
+                            <span class="value">tauseefkhan505@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/923166649914" target="_blank" class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div class="contact-details">
+                            <label>WhatsApp Connection</label>
+                            <span class="value">+92 316 6649914</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="contact-box">
+                    <div class="contact-box-title">Professional Networks</div>
+
+                    <a href="https://www.linkedin.com/in/tauseef-khan-53a187292/" target="_blank" class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </div>
+                        <div class="contact-details">
+                            <label>LinkedIn Matrix</label>
+                            <span class="value">linkedin.com/in/tauseef-khan</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/tauseefkhanmusic/" target="_blank" class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </div>
+                        <div class="contact-details">
+                            <label>Instagram Hub</label>
+                            <span class="value">@tauseefkhanmusic</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.facebook.com/mtauseefkhan0" target="_blank" class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </div>
+                        <div class="contact-details">
+                            <label>Facebook Feed</label>
+                            <span class="value">facebook.com/mtauseefkhan0</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>Tauseef Khan © 2026 Portfolio Suite</div>
+        <div style="color: var(--accent-red); text-shadow: 0 0 10px var(--red-glow); font-weight: 700;">Digital Media & Audio Suite</div>
+    </footer>
+
+    <script>
+        // Scroll reveal
+        const scrollSections = document.querySelectorAll('section');
+        const scrollOptions = { root: null, threshold: 0.1, rootMargin: "0px" };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, scrollOptions);
+
+        scrollSections.forEach(section => scrollObserver.observe(section));
+
+        // Mobile menu
+        const menuToggleBtn = document.getElementById('mobile-menu-btn');
+        const navigationMenu = document.getElementById('nav-menu');
+        const navigationLinks = document.querySelectorAll('#nav-menu ul li a');
+
+        function toggleMobileMenu() {
+            menuToggleBtn.classList.toggle('active');
+            navigationMenu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            menuToggleBtn.classList.remove('active');
+            navigationMenu.classList.remove('active');
+        }
+
+        menuToggleBtn.addEventListener('click', toggleMobileMenu);
+        navigationLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+        document.addEventListener('click', (event) => {
+            const headerElement = document.querySelector('header');
+            if (!headerElement.contains(event.target)) closeMobileMenu();
+        });
+    </script>
+</body>
+</html>
